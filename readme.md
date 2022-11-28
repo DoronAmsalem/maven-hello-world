@@ -9,7 +9,7 @@ Now, to print "Hello World!", type either...
     cd my-app
     mvn compile
     java -cp target/classes com.mycompany.app.App
-or...
+or..
 
     cd my-app
     mvn package
