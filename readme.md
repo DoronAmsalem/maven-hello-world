@@ -9,7 +9,7 @@ Now, to print "Hello World!", type either...
     cd my-app
     mvn compile
     java -cp target/classes com.mycompany.app.App
-or...
+or..
 
     cd my-app
     mvn package
@@ -19,7 +19,7 @@ Running `mvn clean` will get us back to only the source Java and the `pom.xml`:
 
     murphy:my-app pdurbin$ mvn clean --quiet
     murphy:my-app pdurbin$ ack -a -f
-    pom.xml
+    pom.xm
     src/main/java/com/mycompany/app/App.java
     src/test/java/com/mycompany/app/AppTest.java
 
