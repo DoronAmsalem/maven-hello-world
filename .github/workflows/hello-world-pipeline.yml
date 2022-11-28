@@ -1,7 +1,7 @@
 name: Maven CI/CD
 on:
-  push:
-     branches: [ dev ]
+  pull_request:
+     branches: [ master ]
 env:
   REPOSITORY: doronamsalem/mvn_hello_world
   POM: ./my-app/pom.xml
