@@ -1,7 +1,7 @@
 name: Maven CI/CD
 on:
   pull_request:
-     branches: [ doronamsalem-patch-1 ]
+     branches: [ doronamsalem-patch-2 ]
 env:
   REPOSITORY: doronamsalem/mvn_hello_world
   POM: ./my-app/pom.xml
