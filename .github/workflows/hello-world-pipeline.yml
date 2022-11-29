@@ -45,14 +45,13 @@ jobs:
            docker rmi $REPOSITORY:${{ env.NEW_VERSION }}
            echo "~~~~version ${{ env.NEW_VERSION }} accessable on dockerhub~~~~"
     -
-      name: Commit pom version
-      uses: EndBug/add-and-commit@v9
-      with:
-          add: './my-app/pom.xml'
-          author_name: doron amsalem
-          author_email: 100doron100@gmail.com
-          fetch: false
-          message: 'update pom version'
+    - name: update file and push to remote
+      run: |
+          git config --global user.name "doron.amsalem"
+          git config --global user.email "100doron100@gmail.com"
+          git add -f my-app/pom.xml
+          git commit -m 'update pom version'
+          git push
     -
       # ubuntu OS is required
       # for others OS, install docker and comment the step below and the "docker installation" section in the next step
