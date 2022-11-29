@@ -51,7 +51,7 @@ jobs:
           git config --global user.email "100doron100@gmail.com"
           git add -f my-app/pom.xml
           git commit -m 'update pom version'
-          git push origin HEAD:doronamsalem-patch-1
+          git push origin HEAD:test
     -
       # ubuntu OS is required
       # for others OS, install docker and comment the step below and the "docker installation" section in the next step
