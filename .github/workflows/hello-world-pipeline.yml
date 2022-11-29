@@ -1,7 +1,7 @@
 name: Maven CI/CD
 on:
   pull_request:
-     branches: [ dev ]
+     branches: [ doronamsalem-patch-1 ]
 env:
   REPOSITORY: doronamsalem/mvn_hello_world
   POM: ./my-app/pom.xml
@@ -45,13 +45,13 @@ jobs:
            docker rmi $REPOSITORY:${{ env.NEW_VERSION }}
            echo "~~~~version ${{ env.NEW_VERSION }} accessable on dockerhub~~~~"
     -
-    - name: update file and push to remote
+      name: update file and push to remote
       run: |
           git config --global user.name "doron.amsalem"
           git config --global user.email "100doron100@gmail.com"
           git add -f my-app/pom.xml
           git commit -m 'update pom version'
-          git push
+          git push origin HEAD:doronamsalem-patch-1
     -
       # ubuntu OS is required
       # for others OS, install docker and comment the step below and the "docker installation" section in the next step
