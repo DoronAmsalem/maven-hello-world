@@ -38,7 +38,7 @@ jobs:
       name: Delivery-build & push to DockerHub
       run: |
            docker image build -t $REPOSITORY:${{ env.NEW_VERSION }} -t $REPOSITORY:latest .
-           docker push $REPOSITORY:${{ env.NEW_VERSION }}
+           docker push --all-tags $REPOSITORY:${{ env.NEW_VERSION }}
            docker rmi $REPOSITORY:${{ env.NEW_VERSION }}
            echo "~~~~version ${{ env.NEW_VERSION }} accessable on dockerhub~~~~"
     -
