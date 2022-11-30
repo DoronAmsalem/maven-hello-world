@@ -13,9 +13,6 @@ jobs:
     -
       uses: actions/checkout@v3    #clone repository files into working dir
     -
-      name: Clean
-      run: mvn -B clean -f $POM
-    -
       name: Set up JDK 8
       uses: actions/setup-java@v3
       with:
@@ -40,7 +37,7 @@ jobs:
     -
       name: Delivery-build & push to DockerHub
       run: |
-           docker image build -t $REPOSITORY:${{ env.NEW_VERSION }} .
+           docker image build -t $REPOSITORY:${{ env.NEW_VERSION }} -t $REPOSITORY:latest .
            docker push $REPOSITORY:${{ env.NEW_VERSION }}
            docker rmi $REPOSITORY:${{ env.NEW_VERSION }}
            echo "~~~~version ${{ env.NEW_VERSION }} accessable on dockerhub~~~~"
